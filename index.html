@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PKI as a Service - RDEM Systems</title>
+    <meta name="description" content="PKI as a Service - Infrastructure de clés publiques managée par RDEM Systems. Certificats SSL/TLS, CA privée, gestion simplifiée et sécurisée.">
+    <meta name="keywords" content="PKI, certificats, SSL, TLS, CA, infrastructure clés publiques, RDEM Systems">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pkiaas.rdem-systems.com/">
+    <meta property="og:title" content="PKI as a Service - RDEM Systems">
+    <meta property="og:description" content="Infrastructure de clés publiques managée - Certificats SSL/TLS, CA privée, gestion simplifiée">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#EEF2FF',
+                            100: '#E0E7FF',
+                            200: '#C7D2FE',
+                            300: '#A5B4FC',
+                            400: '#818CF8',
+                            500: '#1E3A8A',
+                            600: '#1E40AF',
+                            700: '#1E3A8A',
+                            800: '#1E3A8A',
+                            900: '#1E3A8A'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'heading': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-gradient-to-br from-primary-50 to-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-primary-700 border-b border-primary-600 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.rdem-systems.com" class="text-white font-heading font-bold text-xl hover:text-primary-200 transition-colors">RDEM Systems</a>
+                    <span class="text-primary-200 text-sm">PKI as a Service</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#features" class="text-white hover:text-primary-200 transition-colors">Fonctionnalités</a>
+                    <a href="#pricing" class="text-white hover:text-primary-200 transition-colors">Tarifs</a>
+                    <a href="#contact" class="text-white hover:text-primary-200 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="text-center max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+                PKI as a Service
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 font-medium">
+                Infrastructure de clés publiques managée pour vos certificats SSL/TLS, CA privée et gestion sécurisée
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-4 text-lg text-gray-700 mb-10">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="text-primary-600"></i>
+                    <span>CA privée sécurisée</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="key" class="text-primary-600"></i>
+                    <span>Certificats illimités</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="cloud" class="text-primary-600"></i>
+                    <span>Managé ou auto-hébergé</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i data-lucide="zap" class="text-primary-600"></i>
+                    <span>API REST complète</span>
+                </div>
+            </div>
+
+            <!-- Launch Offer Banner -->
+            <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <i data-lucide="sparkles" class="text-green-600 w-6 h-6"></i>
+                    <span class="text-green-800 font-heading font-bold text-xl">Offre de Lancement</span>
+                    <i data-lucide="sparkles" class="text-green-600 w-6 h-6"></i>
+                </div>
+                <p class="text-green-700 font-semibold text-lg">
+                    <strong>-30% de remise</strong> pour les 30 premiers clients
+                </p>
+                <p class="text-green-600 text-sm mt-1">
+                    Réduction appliquée automatiquement • Offre limitée dans le temps
+                </p>
+            </div>
+
+            <a href="#contact" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg">
+                Demander un devis
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center text-gray-900 mb-12">
+                Fonctionnalités PKI Complètes
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- CA Management -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="shield" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-gray-900 mb-3">
+                        Autorité de Certification Privée
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Votre propre CA avec gestion complète des certificats racine et intermédiaires.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• CA racine sécurisée HSM</li>
+                        <li>• Certificats intermédiaires illimités</li>
+                        <li>• Révocation et CRL automatiques</li>
+                    </ul>
+                </div>
+
+                <!-- Certificate Management -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="key" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-gray-900 mb-3">
+                        Gestion de Certificats
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Émission, renouvellement et révocation automatisés pour tous vos besoins.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• SSL/TLS, code signing, client auth</li>
+                        <li>• Renouvellement automatique</li>
+                        <li>• Templates personnalisés</li>
+                    </ul>
+                </div>
+
+                <!-- API Integration -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="code" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-gray-900 mb-3">
+                        API REST Complète
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Intégration facile dans vos applications et workflows existants.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• API REST documentée</li>
+                        <li>• SDKs Python, Go, Node.js</li>
+                        <li>• Webhooks pour notifications</li>
+                    </ul>
+                </div>
+
+                <!-- Security -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="lock" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-gray-900 mb-3">
+                        Sécurité Renforcée
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Protection maximale avec HSM et chiffrement de bout en bout.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• HSM pour clés privées</li>
+                        <li>• Audit trail complet</li>
+                        <li>• Authentification multi-facteurs</li>
+                    </ul>
+                </div>
+
+                <!-- Monitoring -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="activity" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-gray-900 mb-3">
+                        Monitoring & Alertes
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Surveillance continue avec alertes proactives d'expiration.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Dashboard temps réel</li>
+                        <li>• Alertes d'expiration</li>
+                        <li>• Métriques détaillées</li>
+                    </ul>
+                </div>
+
+                <!-- Compliance -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="file-check" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-gray-900 mb-3">
+                        Conformité & Audit
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Respect des standards et traçabilité complète pour vos audits.
+                    </p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Standards X.509, RFC 5280</li>
+                        <li>• Logs d'audit immutables</li>
+                        <li>• Rapports de conformité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gradient-to-br from-primary-50 to-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center text-gray-900 mb-4">
+                Tarification Transparente
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Choisissez la formule qui correspond à vos besoins. Une CA, certificats illimités.<br>
+                <strong>Tarifs hors taxes.</strong>
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+                <!-- Cloud Hosting -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow relative">
+                    <div class="text-center">
+                        <div class="text-primary-600 mb-4">
+                            <i data-lucide="cloud" class="w-16 h-16 mx-auto"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-gray-900 mb-2">
+                            Instance Cloud
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Hébergée et managée par RDEM Systems
+                        </p>
+                        <div class="mb-6">
+                            <div class="text-4xl font-heading font-bold text-primary-700 mb-2">
+                                <span class="line-through text-gray-400 text-2xl mr-2">450€</span>
+                                315€
+                            </div>
+                            <div class="text-gray-600">par mois</div>
+                            <div class="text-sm text-green-600 font-semibold mt-1">
+                                -30% offre de lancement
+                            </div>
+                        </div>
+
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Une autorité de certification privée</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Certificats intermédiaires illimités</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Certificats finaux illimités</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>API REST complète</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Interface web intuitive</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Monitoring et alertes</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Support technique inclus</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Sauvegarde automatique</span>
+                            </li>
+                        </ul>
+
+                        <a href="#contact" class="block w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            Choisir cette formule
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Self-Hosted -->
+                <div class="bg-white border-2 border-primary-600 rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary-700 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            Maximum de contrôle
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-primary-600 mb-4">
+                            <i data-lucide="server" class="w-16 h-16 mx-auto"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-gray-900 mb-2">
+                            Instance Auto-Hébergée
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            Sur votre infrastructure
+                        </p>
+                        <div class="mb-6">
+                            <div class="text-4xl font-heading font-bold text-primary-700 mb-2">
+                                <span class="line-through text-gray-400 text-2xl mr-2">800€</span>
+                                560€
+                            </div>
+                            <div class="text-gray-600">par mois</div>
+                            <div class="text-sm text-green-600 font-semibold mt-1">
+                                -30% offre de lancement
+                            </div>
+                        </div>
+
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Toutes les fonctionnalités Cloud</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Déploiement sur votre infrastructure</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Contrôle total des données</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Personnalisation avancée</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Installation et configuration</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Formation de votre équipe</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Support premium</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-600 w-5 h-5 flex-shrink-0"></i>
+                                <span>Mises à jour managées</span>
+                            </li>
+                        </ul>
+
+                        <a href="#contact" class="block w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                            Choisir cette formule
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+                <div class="text-center">
+                    <div class="text-primary-600 mb-3">
+                        <i data-lucide="infinity" class="w-8 h-8 mx-auto"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Certificats Illimités</h4>
+                    <p class="text-sm text-gray-600">Aucune limite sur le nombre de certificats émis</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-primary-600 mb-3">
+                        <i data-lucide="zap" class="w-8 h-8 mx-auto"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Déploiement Rapide</h4>
+                    <p class="text-sm text-gray-600">Opérationnel en moins de 24h pour la version cloud</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-primary-600 mb-3">
+                        <i data-lucide="headphones" class="w-8 h-8 mx-auto"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Support Expert</h4>
+                    <p class="text-sm text-gray-600">Équipe spécialisée PKI et cryptographie</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-primary-600 mb-3">
+                        <i data-lucide="shield-check" class="w-8 h-8 mx-auto"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 mb-2">Sécurité Maximale</h4>
+                    <p class="text-sm text-gray-600">HSM et chiffrement de niveau bancaire</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center text-gray-900 mb-4">
+                Cas d'Usage
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                PKI as a Service s'adapte à tous vos besoins de sécurité et de chiffrement
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- SSL/TLS Internal -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="globe" class="w-10 h-10 mx-auto"></i>
+                    </div>
+                    <h3 class="font-heading font-semibold text-gray-900 mb-2">SSL/TLS Interne</h3>
+                    <p class="text-sm text-gray-600">Sécurisez vos applications internes avec des certificats SSL/TLS privés</p>
+                </div>
+
+                <!-- Code Signing -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="code-2" class="w-10 h-10 mx-auto"></i>
+                    </div>
+                    <h3 class="font-heading font-semibold text-gray-900 mb-2">Signature de Code</h3>
+                    <p class="text-sm text-gray-600">Signez vos applications et garantissez leur intégrité</p>
+                </div>
+
+                <!-- Client Authentication -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="user-check" class="w-10 h-10 mx-auto"></i>
+                    </div>
+                    <h3 class="font-heading font-semibold text-gray-900 mb-2">Authentification Client</h3>
+                    <p class="text-sm text-gray-600">Authentification forte avec certificats clients</p>
+                </div>
+
+                <!-- IoT Security -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="radio" class="w-10 h-10 mx-auto"></i>
+                    </div>
+                    <h3 class="font-heading font-semibold text-gray-900 mb-2">Sécurité IoT</h3>
+                    <p class="text-sm text-gray-600">Sécurisez vos objets connectés avec des certificats dédiés</p>
+                </div>
+
+                <!-- Document Signing -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="file-signature" class="w-10 h-10 mx-auto"></i>
+                    </div>
+                    <h3 class="font-heading font-semibold text-gray-900 mb-2">Signature Électronique</h3>
+                    <p class="text-sm text-gray-600">Signez électroniquement vos documents avec valeur légale</p>
+                </div>
+
+                <!-- VPN -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow text-center">
+                    <div class="text-primary-600 mb-4">
+                        <i data-lucide="shield" class="w-10 h-10 mx-auto"></i>
+                    </div>
+                    <h3 class="font-heading font-semibold text-gray-900 mb-2">VPN d'Entreprise</h3>
+                    <p class="text-sm text-gray-600">Déployez des VPN sécurisés avec authentification par certificats</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-primary-50 to-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-8">
+                Prêt à déployer votre PKI ?
+            </h2>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                Contactez notre équipe d'experts pour une démonstration personnalisée et découvrez comment PKI as a Service peut transformer votre sécurité
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:contact@rdem-systems.com"
+                   class="inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg">
+                    <i data-lucide="mail"></i>
+                    Demander une démo
+                </a>
+                <a href="tel:+33177626242"
+                   class="inline-flex items-center gap-2 bg-white border-2 border-primary-700 text-primary-700 hover:bg-primary-50 font-bold py-4 px-8 rounded-lg transition-colors text-lg">
+                    <i data-lucide="phone"></i>
+                    Appeler
+                </a>
+            </div>
+
+            <div class="mt-12 bg-primary-50 rounded-lg p-6 max-w-2xl mx-auto">
+                <h3 class="text-lg font-heading font-semibold text-gray-900 mb-4">
+                    🚀 Offre de Lancement Limitée
+                </h3>
+                <p class="text-gray-700 mb-2">
+                    <strong>-30% de remise</strong> pour les 30 premiers clients
+                </p>
+                <p class="text-sm text-gray-600">
+                    Profitez de tarifs préférentiels pour découvrir notre PKI as a Service
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="font-heading font-bold text-xl mb-4">RDEM Systems</h3>
+                    <p class="text-primary-200">
+                        Expert en PKI as a Service et infrastructure de clés publiques managée
+                    </p>
+                    <p class="text-primary-300 text-sm mt-2">
+                        Équipe spécialisée : Cryptographie, PKI, Sécurité, Infrastructure
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-primary-200">
+                        <li>PKI managée</li>
+                        <li>CA privée</li>
+                        <li>Certificats SSL/TLS</li>
+                        <li>API REST</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2 text-primary-200">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>contact@rdem-systems.com</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>+33 1 77 62 62 42</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-primary-700 mt-8 pt-8 text-center text-primary-200">
+                <p>&copy; 2025 RDEM Systems. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
