@@ -6,6 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **static HTML landing page** for **PKI as a Service** by RDEM Systems. It's a single-page website showcasing PKI (Public Key Infrastructure) services with pricing, features, and contact information.
 
+**Note**: The PKIaaS software is now **open source (AGPL v3)**:
+- GitHub Repository: https://github.com/rdemsystems/pki
+- Documentation: https://pki.rdem-systems.com
+- Commercial licensing available for enterprise customers
+
 ## Tech Stack
 
 - **Static HTML5** with semantic markup
