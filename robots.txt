@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+Sitemap: https://pki.rdem-systems.com/sitemap.xml
