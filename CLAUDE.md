@@ -98,7 +98,7 @@ The site is designed to be deployed as a static website. Common deployment optio
 
 ### Contact Information
 - Email: `contact@rdem-systems.com`
-- Phone: `+33 1 77 62 62 42`
+- Phone: `+33 1 77 62 42 42`
 - Both appear in contact section and footer
 
 ### Launch Offer Configuration
