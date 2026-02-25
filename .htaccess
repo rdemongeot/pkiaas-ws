@@ -1,8 +1,9 @@
 RewriteEngine On
 
-# Redirection canonique vers pki.rdem-systems.com
-RewriteCond %{HTTP_HOST} !^pki\.rdem-systems\.com$ [NC]
-RewriteRule ^(.*)$ https://pki.rdem-systems.com/$1 [R=301,L]
+# Redirection canonique vers pkiaas.rdem-systems.com
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^pkiaas\.rdem-systems\.com$ [NC]
+RewriteRule ^(.*)$ https://pkiaas.rdem-systems.com/$1 [R=301,L]
 
 # Security headers
 Header set X-Content-Type-Options "nosniff"
