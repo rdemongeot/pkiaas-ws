@@ -159,7 +159,8 @@
                 </div>
             </div>
 
-            <a href="#contact" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg">
+            <a href="#contact" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg"
+               data-funnel="pkiaas-devis" data-funnel-plan="discovery">
                 Demander un devis
             </a>
         </div>
@@ -357,7 +358,8 @@
                             </li>
                         </ul>
 
-                        <a href="#contact" class="block w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        <a href="#contact" class="block w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                           data-funnel="pkiaas-devis" data-funnel-plan="cloud">
                             Choisir cette formule
                         </a>
                     </div>
@@ -426,7 +428,8 @@
                             </li>
                         </ul>
 
-                        <a href="#contact" class="block w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        <a href="#contact" class="block w-full bg-primary-700 hover:bg-primary-800 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                           data-funnel="pkiaas-devis" data-funnel-plan="self-hosted">
                             Choisir cette formule
                         </a>
                     </div>
@@ -626,7 +629,8 @@
 
             <!-- CTA -->
             <div class="text-center">
-                <a href="#contact" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg mb-4">
+                <a href="#contact" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg mb-4"
+                   data-funnel="pkiaas-demo" data-funnel-plan="poc">
                     Démarrer le POC Gratuit
                 </a>
                 <p class="text-gray-600">Audit gratuit de votre PKI existante + Workshop technique inclus</p>
@@ -650,12 +654,14 @@
             </div>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="mailto:contact@rdem-systems.com"
-                   class="inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg">
+                   class="inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800 text-white font-bold py-4 px-8 rounded-lg transition-colors text-lg"
+                   data-funnel="pkiaas-contact" data-funnel-plan="demo">
                     <i data-lucide="mail"></i>
                     Demander une démo
                 </a>
                 <a href="tel:+33177624242"
-                   class="inline-flex items-center gap-2 bg-white border-2 border-primary-700 text-primary-700 hover:bg-primary-50 font-bold py-4 px-8 rounded-lg transition-colors text-lg">
+                   class="inline-flex items-center gap-2 bg-white border-2 border-primary-700 text-primary-700 hover:bg-primary-50 font-bold py-4 px-8 rounded-lg transition-colors text-lg"
+                   data-funnel="pkiaas-contact" data-funnel-plan="phone">
                     <i data-lucide="phone"></i>
                     Appeler
                 </a>
@@ -731,6 +737,19 @@
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Funnel lead tracking on CTA clicks
+        document.querySelectorAll('[data-funnel]').forEach(function(el) {
+            el.addEventListener('click', function() {
+                if (window.Funnel && window.Funnel.lead) {
+                    window.Funnel.lead({
+                        source_funnel: el.getAttribute('data-funnel'),
+                        notes: el.textContent.trim(),
+                        custom_data: { plan: el.getAttribute('data-funnel-plan') || 'unknown' }
+                    });
+                }
+            });
+        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
