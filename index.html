@@ -750,8 +750,8 @@
             </p>
             <div class="flex flex-col gap-2 mb-3 text-sm">
                 <label class="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" id="consent-rdem" checked class="accent-blue-500">
-                    Suivi d'audience RDEM Systems (cookie de suivi cross-visite)
+                    <input type="checkbox" id="consent-rdem" class="accent-blue-500">
+                    Suivi de vos visites dans la durée (cookie RDEM Systems, 13 mois)
                 </label>
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input type="checkbox" id="consent-ga4" class="accent-blue-500">
@@ -786,11 +786,13 @@
         function setConsents(funnel, ga, meta) {
             var opts = '; Path=/; Max-Age=34560000; Secure; SameSite=Lax; Domain=.rdem-systems.com';
             document.cookie = 'funnel_consent=' + funnel + opts;
+            document.cookie = 'funnel_consent_v=2' + opts;
             document.cookie = 'ga_consent=' + ga + opts;
             document.cookie = 'meta_consent=' + meta + opts;
         }
         // Hide banner if all 3 consent cookies already exist
         if (document.cookie.indexOf('funnel_consent=') !== -1 &&
+    document.cookie.indexOf('funnel_consent_v=2') !== -1 &&
             document.cookie.indexOf('ga_consent=') !== -1 &&
             document.cookie.indexOf('meta_consent=') !== -1) {
             var b = document.getElementById('cookie-banner');
